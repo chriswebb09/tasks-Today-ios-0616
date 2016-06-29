@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FISEventDetailViewController.h"
 
 @interface FISViewController : UIViewController
+@property (strong, nonatomic) NSArray *passedEventDetails;
 
 - (NSArray *)getNextYearsEvents;
 - (NSArray *)getLastYearsEvents;
