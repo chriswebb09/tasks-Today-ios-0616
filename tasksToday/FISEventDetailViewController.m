@@ -19,8 +19,16 @@
     [super viewDidLoad];
     NSString *stringItem = @"";
     for (NSString *item in self.eventTitleArray) {
-        stringItem = [stringItem stringByAppendingString:item];
-        //stringItem = [stringItem stringByAppendingString:@"\n"];
+        if (self.eventTitleArray.count > 1) {
+            if ([item isEqualToString:[self.eventTitleArray lastObject]]) {
+                stringItem = [stringItem stringByAppendingString:item];
+            } else {
+                stringItem = [stringItem stringByAppendingString:item];
+                stringItem = [stringItem stringByAppendingString:@"\n"];
+            }
+        } else {
+            stringItem = [stringItem stringByAppendingString:item];
+        }
         
     }
     self.textView.text = stringItem;
