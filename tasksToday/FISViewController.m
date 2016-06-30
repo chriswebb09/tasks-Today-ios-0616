@@ -26,8 +26,6 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     NSMutableArray *titleArray = [[NSMutableArray alloc]init];
-    NSUInteger index = 0;
-    NSString *eventTitle = @"";
     if ([segue.identifier isEqualToString:@"lastYear"]) {
         
         self.passedEventDetails = [self getLastYearsEvents];
@@ -35,13 +33,6 @@
             EKEvent *newEvent = self.passedEventDetails[i];
             [titleArray addObject:newEvent.title];
         }
-//        for (EKEvent *item in [self getLastYearsEvents]) {
-//            index += 1;
-//            eventTitle = [NSString stringWithFormat:@"%@", item.title];
-//            
-//        }
-        NSLog(@"\n\n\n\n\n NEW_TITILE %@", eventTitle);
-        NSLog(@"%@", self.passedEventDetails);
         
     } else if ([segue.identifier isEqualToString:@"nextYear"]) {
         self.passedEventDetails = [self getNextYearsEvents];
@@ -49,7 +40,6 @@
             EKEvent *newEvent = self.passedEventDetails[i];
             [titleArray addObject:newEvent.title];
         }
-        //NSLog(@"PASSED EVENT: %@", self.passedEventDetails[0][@"EKEvent"]);
     }
     
     FISEventDetailViewController *eventDetailVC = [segue destinationViewController];

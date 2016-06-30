@@ -32,8 +32,6 @@
         
     }
     self.textView.text = stringItem;
-
-    // Do view setup here.
 }
 
 
