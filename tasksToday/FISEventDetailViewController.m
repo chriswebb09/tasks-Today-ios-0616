@@ -17,10 +17,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSString *stringItem = @" ";
+    NSString *stringItem = @"";
     for (NSString *item in self.eventTitleArray) {
         stringItem = [stringItem stringByAppendingString:item];
-        stringItem = [stringItem stringByAppendingString:@"\n"];
+        //stringItem = [stringItem stringByAppendingString:@"\n"];
         
     }
     self.textView.text = stringItem;
